@@ -74,7 +74,7 @@ def search_and_print_profiles(query, api_key, cx, company_name, max_pages=3):
 
 # Read company names from Excel
 company_names = []
-wb = openpyxl.load_workbook("company_data_1.xlsx")
+wb = openpyxl.load_workbook("company_data.xlsx")
 sheet = wb.active
 
 for i in range(2, 22):  # Read rows 2 to 20 (i.e., first 19 companies)
