@@ -4,7 +4,7 @@
 
 ## 🧩 1. Company URLs Scraper
 
-**Script:** `01_get_company_urls.py`  
+**Script:** `linkedin_company_data.py`  
 **Description:** This script collects basic information about companies from LinkedIn search results.
 
 **Extracted Fields:**
@@ -19,7 +19,7 @@
 
 ## 🕷️ 2. Company "About" Data Scraper
 
-**Script:** `02_scrape_about_data_scrapy` (Scrapy project)  
+**Script:** `Scrapy` (Scrapy project)  
 **Description:** A Scrapy-based spider that visits each company page URL and extracts detailed company info.
 
 **Extracted Fields:**
@@ -36,7 +36,7 @@
 - `Locations`
 - `Employees`
 
-**Output File:** `02_company_about_data.xlsx`
+**Output File:** `linkedin_members_data`
 
 ---
 
