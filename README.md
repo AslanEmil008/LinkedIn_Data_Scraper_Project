@@ -13,7 +13,7 @@
 - `Company Type`
 - `City`
 
-**Output File:** `01_company_urls.xlsx`
+**Output File:** `company-data.xlsx`
 
 ---
 
@@ -36,13 +36,13 @@
 - `Locations`
 - `Employees`
 
-**Output File:** `linkedin_members_data`
+**Output File:** `company_profiles.xlsx`
 
 ---
 
 ## 👥 3. Company Employees Scraper
 
-**Script:** `03_scrape_employees.py`  
+**Script:** `linkedin_members_data`  
 **Description:** This script collects public employee information from company LinkedIn pages.
 
 **Extracted Fields:**
@@ -51,13 +51,7 @@
 - `Title`
 - `LinkedIn Profile URL`
 
-**Output File:** `03_company_employees.xlsx`
-
----
-
-## 🖼️ Screenshots
-
-Screenshots of sample data from each stage are available in the `/screenshots` folder for quick preview.
+**Output File:** `company_members.xlsx`
 
 ---
 
