@@ -80,4 +80,4 @@ class LinkedCompanySpider(scrapy.Spider):
 
         row = [company_item.get(col, 'Not found') for col in ['Company URL', 'Name', 'Summary', 'Industry', 'Size', 'Founded', 'Website', 'Headquarters', 'Type', 'Specialties', 'Locations', 'Employees']]
         self.sheet.append(row)
-        self.workbook.save('company_profilesss.xlsx')
+        self.workbook.save('company_profiles.xlsx')
