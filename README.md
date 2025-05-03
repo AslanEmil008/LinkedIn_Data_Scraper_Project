@@ -47,10 +47,10 @@ For more details, please refer to the section titled <b>Project Structure</b>.
 
 
 # Getting Started
-# Requirments 
-Below is presented the correct order to run the code.<br>
-For running this, you need to open two windows—one for running the linkedin_company_data.py,linkedin_members_data.py files and the other for running Scrapy.<br>
-First, you need to run linkedin_company_data.py, then start Scrapy, and finally run linkedin_members_data.py
+## Requirments 
+Below is the order in which the code should be run and instructions on how to run it<br>
+For running this project, you need to open two windows—one for running the linkedin_company_data.py,linkedin_members_data.py files and the other for running Scrapy.<br>
+First, you need to run linkedin_company_data.py, then start Scrapy, and finally run linkedin_members_data.py<br>
 ## Usage
 ### Clone the Repository
 ```bash
@@ -102,14 +102,14 @@ scrapy crawl basic_scrapy_spider
 ```
 After this step, you'll get data with the columns defined in the <b>Project Structure.</b>
 
-Lastly, run `linkedin_members_data.py`.<br>
+<b>Lastly, run `linkedin_members_data.py`.</b><br>
 <b>1.</b>In the script,locate and update the following with your own credentials:
 ```bash
 API_KEY = "your-google-api-key"
 CX = "your-custom-search-engine-id"
 ```
 - To get the API key, go to [Google Cloud Console](https://console.cloud.google.com/), create a project, and generate an API key.
-- To get the CX (Custom Search Engine ID), go to [Programmable Search Engine](https://programmablesearchengine.google.com/about/), create a project, and obtain the CX ID.
+- To get the CX (Custom Search Engine ID), go to [Programmable Search Engine](https://programmablesearchengine.google.com/about/), create a project, and obtain the CX ID.<br>
 <b>2.</b>Run the script.<br>
 After running it, you will receive the member data as specified in the <b>Project Structure.</b>
 
