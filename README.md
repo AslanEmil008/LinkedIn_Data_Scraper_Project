@@ -6,7 +6,7 @@ The Python scripts collect data such as the company name, company URL, and emplo
 The Scrapy project extracts information from the companies' 'About' sections.<br>
 For more details, please refer to the section titled <b>Project Structure</b>.
 
-##Project Sructure
+## Project Sructure
 ### 1. **Company URLs Scraper**
 - **Script**: `linkedin_company_data.py`
 - **Description**: Retrieves company information, such as the company name and LinkedIn link.
@@ -63,19 +63,56 @@ pip install -r requirements.txt
 ```
 
 ### Runing the codes
-After cloning and downloading requirments.txt first you need to run <b>linkedin_company_data.py</b> <br>
-for runing this code 
-first you need in here:
+After cloning the repository and installing the requirements from `requirements.txt`, you first need to run `linkedin_company_data.py`
+#### To run this code:
+1.Locate the following lines:
+```bash
 email_field.send_keys("example@gmail.com")
 password_field.send_keys("passwordexample")
-chnge the email and password
-then
-for your nedded search you need do search the company types you want in linkedin then chooos from filters company after those copy the link and chnage it in
- linkedin_company_data.py file in <i>base_url = "https://www.linkedin.com/search/results/COMPANIES/?keywords=marketing&origin=SWITCH_SEARCH_VERTICAL&page={page}&sid=tHO"</i>
- instead <i>https://www.linkedin.com/search/results/COMPANIES/?keywords=marketing&origin=SWITCH_SEARCH_VERTICAL&page={page}&sid=tHO</i>
-after doing changes you can run the code and get the datas.
+```
+Replace the email and password with your own LinkedIn credentials.
 
-Then you need to run the Scrapy
+
+2.To perform a search:
+Go to LinkedIn and search for the company types you need.<br>
+Use the filters to select "Companies".<br>
+Copy the resulting URL locate:
+```bash
+base_url = "https://www.linkedin.com/search/results/COMPANIES/?keywords=marketing&origin=SWITCH_SEARCH_VERTICAL&page={page}&sid=tHO"
+```
+ Replace the value of your base_url <br>
+After making these changes, run the script to get the company data.
+
+
+Next, you need to run the Scrapy spider:<br>
+1.Open the Scrapy folder in a new terminal window
+2.In terminal run:
+```bash
+source venv/bin/activate
+cd Scrapy
+```
+3.Open settings.py and update this line with your own ScrapeOps API key
+```bash
+SCRAPEOPS_API_KEY = 'your-api-key-here'
+```
+4.Run the spider:
+```bash
+scrapy crawl basic_scrapy_spider
+```
+After this step, you'll get data with the columns defined in the <b>Project Structure.</b>
+
+Lastly, run `linkedin_members_data.py`.
+1.In the script,locate and update the following with your own credentials:
+```bash
+API_KEY = "your-google-api-key"
+CX = "your-custom-search-engine-id"
+```
+- To get the API key, go to [Google Cloud Console](https://console.cloud.google.com/), create a project, and generate an API key.
+- To get the CX (Custom Search Engine ID), go to [Programmable Search Engine](https://programmablesearchengine.google.com/about/), create a project, and obtain the CX ID.
+2.Run the script.<br>
+After running it, you will receive the member data as specified in the <b>Project Structure.</b>
+
+
 
 
 
