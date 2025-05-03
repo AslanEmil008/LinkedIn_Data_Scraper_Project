@@ -62,30 +62,31 @@ Then install requirments.txt
 pip install -r requirements.txt
 ```
 
-### Runing the codes
-After cloning the repository and installing the requirements from `requirements.txt`, you first need to run `linkedin_company_data.py`
-#### To run this code:
-1.Locate the following lines:
+### How to run
+After cloning the repository and installing the requirements from `requirements.txt`<br>
+First run `linkedin_company_data.py`
+#### To run this code you need:
+<b>1.</b>Locate the following lines:
 ```bash
 email_field.send_keys("example@gmail.com")
 password_field.send_keys("passwordexample")
 ```
-Replace the email and password with your own LinkedIn credentials.
+Replace the email and password with your own LinkedIn credentials.<br>
 
 
-2.To perform a search:
+<b>2.</b>To perform a search:<br>
 Go to LinkedIn and search for the company types you need.<br>
 Use the filters to select "Companies".<br>
-Copy the resulting URL locate:
+Copy the resulting URL and in code locate this line:
 ```bash
 base_url = "https://www.linkedin.com/search/results/COMPANIES/?keywords=marketing&origin=SWITCH_SEARCH_VERTICAL&page={page}&sid=tHO"
 ```
- Replace the value of your base_url <br>
-After making these changes, run the script to get the company data.
+ Replace the value of your <b>base_url</b> <br>
+After this step, you'll get data with the columns defined in the <b>Project Structure.</b>
 
 
 Next, you need to run the Scrapy spider:<br>
-1.Open the Scrapy folder in a new terminal window
+1.Open the Scrapy folder in a new terminal window<br>
 2.In terminal run:
 ```bash
 source venv/bin/activate
