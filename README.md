@@ -49,8 +49,8 @@ For more details, please refer to the section titled <b>Project Structure</b>.
 # Getting Started
 ## Requirments 
 Below is the order in which the code should be run and instructions on how to run it<br>
-For running this project, you need to open two windows—one for running the linkedin_company_data.py,linkedin_members_data.py files and the other for running Scrapy.<br>
 First, you need to run linkedin_company_data.py, then start Scrapy, and finally run linkedin_members_data.py<br>
+For running this project, you need to open two windows—one for running the linkedin_company_data.py,linkedin_members_data.py files and the other for running Scrapy.<br>
 ## Usage
 ### Clone the Repository
 ```bash
@@ -92,7 +92,7 @@ After this step, you'll get data with the columns defined in the <b>Project Stru
 source venv/bin/activate
 cd Scrapy
 ```
-<b>3.</b>Open settings.py and update this line with your own ScrapeOps API key
+<b>3.</b>`Open settings.py` and update this line with your own ScrapeOps API key
 ```bash
 SCRAPEOPS_API_KEY = 'your-api-key-here'
 ```
