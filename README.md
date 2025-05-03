@@ -18,7 +18,7 @@ For more details, please refer to the section titled **[Project Structure](#proj
 - **Output**: `company-data.xlsx`
 
 ### 2. **Company Data Scraper**
-- **Script**: Scrapy
+- **Script**: `Scrapy`
 - **Description**: Enters company pages using the URLs from the company-data.xlsx file, located in the 'Company URL' column
 - **Columns and Data**:
   - Company URL  
