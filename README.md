@@ -64,7 +64,8 @@ pip install -r requirements.txt
 
 ### How to run
 After cloning the repository and installing the requirements from `requirements.txt`<br>
-First run `linkedin_company_data.py`
+<br>
+<b>First run `linkedin_company_data.py`</b>
 #### To run this code you need:
 <b>1.</b>Locate the following lines:
 ```bash
@@ -82,6 +83,10 @@ Copy the resulting URL and in code locate this line:
 base_url = "https://www.linkedin.com/search/results/COMPANIES/?keywords=marketing&origin=SWITCH_SEARCH_VERTICAL&page={page}&sid=tHO"
 ```
  Replace the value of your <b>base_url</b> <br>
+ <b>3</b>Run the script:
+ ```bash
+python3 linkedin_company_data.py
+```
 After this step, you'll get data with the columns defined in the **[Project Structure](#project-structure)**
 
 
@@ -111,6 +116,9 @@ CX = "your-custom-search-engine-id"
 - To get the API key, go to [Google Cloud Console](https://console.cloud.google.com/), create a project, and generate an API key.
 - To get the CX (Custom Search Engine ID), go to [Programmable Search Engine](https://programmablesearchengine.google.com/about/), create a project, and obtain the CX ID.<br>
 <b>2.</b>Run the script.<br>
+```bash
+python3 linkedin_members_data.py
+```
 After running it, you will receive the member data as specified in the **[Project Structure](#project-structure)**
 
 
