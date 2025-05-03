@@ -4,7 +4,7 @@ This project involves collecting data from LinkedIn about various companies.
 It includes two Python scripts and one Scrapy project, which use ScrapeOps and Google APIs to gather LinkedIn data.<br>
 The Python scripts collect data such as the company name, company URL, and employee information.<br>
 The Scrapy project extracts information from the companies 'About' sections.<br>
-For more details, please refer to the section titled **[Project Structure](#project-structure).
+For more details, please refer to the section titled **[Project Structure](#project-structure)**.
 
 ## Project Sructure
 ### 1. **Company URLs Scraper**
@@ -82,7 +82,7 @@ Copy the resulting URL and in code locate this line:
 base_url = "https://www.linkedin.com/search/results/COMPANIES/?keywords=marketing&origin=SWITCH_SEARCH_VERTICAL&page={page}&sid=tHO"
 ```
  Replace the value of your <b>base_url</b> <br>
-After this step, you'll get data with the columns defined in the <b>Project Structure.</b>
+After this step, you'll get data with the columns defined in the [Project Structure](#project-structure)
 
 
 <b>Next, you need to run the Scrapy spider:</b><br>
@@ -100,7 +100,7 @@ SCRAPEOPS_API_KEY = 'your-api-key-here'
 ```bash
 scrapy crawl basic_scrapy_spider
 ```
-After this step, you'll get data with the columns defined in the <b>Project Structure.</b>
+After this step, you'll get data with the columns defined in the [Project Structure](#project-structure)
 
 <b>Lastly, run `linkedin_members_data.py`.</b><br>
 <b>1.</b>In the script,locate and update the following with your own credentials:
@@ -111,7 +111,7 @@ CX = "your-custom-search-engine-id"
 - To get the API key, go to [Google Cloud Console](https://console.cloud.google.com/), create a project, and generate an API key.
 - To get the CX (Custom Search Engine ID), go to [Programmable Search Engine](https://programmablesearchengine.google.com/about/), create a project, and obtain the CX ID.<br>
 <b>2.</b>Run the script.<br>
-After running it, you will receive the member data as specified in the <b>Project Structure.</b>
+After running it, you will receive the member data as specified in the [Project Structure](#project-structure)
 
 
 
