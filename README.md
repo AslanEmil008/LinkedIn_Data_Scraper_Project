@@ -1,7 +1,6 @@
+# LinkedIn Data Scraper Project
 
-#LinkedIn Data Scraper Project
-
-##Introduction
+## Introduction
 This project involves collecting data from LinkedIn about various companies.
 It includes two Python scripts and one Scrapy project, which use ScrapeOps and Google APIs to gather LinkedIn data.
 The Python scripts collect data such as the company name, company URL, and employee information.
