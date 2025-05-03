@@ -83,7 +83,7 @@ Copy the resulting URL and in code locate this line:
 base_url = "https://www.linkedin.com/search/results/COMPANIES/?keywords=marketing&origin=SWITCH_SEARCH_VERTICAL&page={page}&sid=tHO"
 ```
  Replace the value of your <b>base_url</b> <br>
- <b>3</b>Run the script:
+ <b>3.</b>Run the script:
  ```bash
 python3 linkedin_company_data.py
 ```
