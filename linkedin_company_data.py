@@ -18,8 +18,8 @@ time.sleep(2)
 email_field = driver.find_element(By.ID, "username")
 password_field = driver.find_element(By.ID, "password")
 
-email_field.send_keys("anderstomm6@gmail.com")
-password_field.send_keys("aslanemil0616//")
+email_field.send_keys("example@gmail.com")
+password_field.send_keys("passwordexample")
 password_field.send_keys(Keys.RETURN)
 time.sleep(3)
 
