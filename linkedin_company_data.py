@@ -66,7 +66,7 @@ for url, data in company_data.items():
     ws.append([data["name"], url])
 
 # Save file
-wb.save("company_profiles.xlsx")
+wb.save("company_data.xlsx")
 
 # Close browser
 driver.quit()
