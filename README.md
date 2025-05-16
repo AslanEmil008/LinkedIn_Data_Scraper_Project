@@ -13,8 +13,7 @@ For more details, please refer to the section titled **[Project Structure](#proj
 - **Columns and Data**:
   - Company Name  
   - Company URL  
-  - Company Type  
-  - City
+
 - **Output**: `company-data.xlsx`
 
 ### 2. **Company Data Scraper**
