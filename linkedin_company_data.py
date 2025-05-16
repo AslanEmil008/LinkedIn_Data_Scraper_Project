@@ -6,84 +6,69 @@ from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 import time
 import openpyxl
+import re
 
-# Set up the driver (make sure to have ChromeDriver installed)
+# Set up the driver
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 # Log in to LinkedIn
 driver.get("https://www.linkedin.com/login")
 time.sleep(2)
 
-# Enter login credentials (replace 'your_email' and 'your_password' with actual credentials)
+# Enter credentials
 email_field = driver.find_element(By.ID, "username")
 password_field = driver.find_element(By.ID, "password")
-
-email_field.send_keys("example@gmail.com")
-password_field.send_keys("passwordexample")
+email_field.send_keys("jastinbrendon@gmail.com")
+password_field.send_keys("aslanemil0616//")
 password_field.send_keys(Keys.RETURN)
-time.sleep(3)
+time.sleep(20)
 
-# Base URL for LinkedIn search results
-base_url = "https://www.linkedin.com/search/results/COMPANIES/?keywords=marketing&origin=SWITCH_SEARCH_VERTICAL&page={page}&sid=tHO"
+# Base URL for LinkedIn search
+base_url = "https://www.linkedin.com/search/results/COMPANIES/?keywords=marketing&origin=SWITCH_SEARCH_VERTICAL&page={page}"
 
-company_data = []
+# Dictionary to store unique company data
+company_data = {}
 
-# Loop through pages 1 to 10
-for page_num in range(1, 11):
-    # Construct the URL for the current page
+# Loop through pages
+for page_num in range(1, 101):  # Adjust page range as needed
     url = base_url.format(page=page_num)
     driver.get(url)
-    time.sleep(3)  # Wait for the page to load
+    time.sleep(5)
 
-    # Parse the page source using BeautifulSoup
     soup = BeautifulSoup(driver.page_source, "html.parser")
 
-    # Find all divs with class 'mb1' that contain company information
-    companies = soup.find_all("div", class_="mb1")
+    # Extract all <a> tags that point to company pages
+    for a in soup.find_all("a", attrs={"data-test-app-aware-link": True}):
+        href = a.get("href")
+        name = a.get_text(strip=True)
 
-    # Extract the company name, URL, and location
-    for company in companies:
-        company_name_tag = company.find("a", class_="dgePcUVTyZcmWIuOySyndWdGoBMukAZsio")
-        location_tag = company.find("div", class_="mTjnOwtMxHPffEIRcJLDWXTPzwQcTgTqrfveo t-14 t-black t-normal")
-        
-        if company_name_tag and location_tag:
-            company_name = company_name_tag.get_text(strip=True)
-            company_url = company_name_tag["href"]
-            location = location_tag.get_text(strip=True)
+        # Validate it's a clean company page URL and name is non-empty
+        if (
+            href and name and
+            href.startswith("https://www.linkedin.com/company/") and
+            re.match(r"^https://www\.linkedin\.com/company/[^/]+/?$", href)
+        ):
+            if href not in company_data:
+                company_data[href] = {
+                    "name": name
+                }
 
-            # Split the location into company type and city
-            location_parts = location.split('•')
-            company_type = location_parts[0].strip() if len(location_parts) > 1 else ""
-            city = location_parts[-1].strip() if len(location_parts) > 1 else location.strip()
-
-            # Create the People URL by appending '/people/' to the company URL
-          #  people_url = company_url + "/people/"
-
-            company_data.append({
-                "name": company_name,
-                "url": company_url,
-                "company_type": company_type,
-                "city": city,
-                #"people_url": people_url  # Add people URL
-            })
-
-# Create a new workbook and select the active sheet
+# Create Excel workbook
 wb = openpyxl.Workbook()
 ws = wb.active
 ws.title = "Company Data"
 
-# Define column headers
-headers = ["Company Name", "Company URL", "Company Type", "City"] #"People URL"]
-ws.append(headers)
+# Headers
+ws.append(["Company Name", "Company URL"])
 
-# Write the data to the Excel sheet
-for data in company_data:
-    ws.append([data["name"], data["url"], data["company_type"], data["city"]]) #data["people_url"]])
+# Write data
+for url, data in company_data.items():
+    ws.append([data["name"], url])
 
-# Save the workbook to an XLSX file
-wb.save("company_data.xlsx")
+# Save file
+wb.save("company_profiles.xlsx")
 
-# Close the browser after scraping
+# Close browser
 driver.quit()
 
-print("Data has been saved to company_data.xlsx")
+print("✅ Unique company names and URLs saved to company_data.xlsx")
