@@ -54,7 +54,7 @@ For running this project, you need to open two windows—one for running the lin
 ### Clone the Repository
 ```bash
 git clone https://github.com/AslanEmil008/LinkedIn_Data_Scraper_Project.git
-cd linkedin-data-scraper
+cd LinkedIn_Data_Scraper_Project
 ```
 Then install requirments.txt
 ```bash
